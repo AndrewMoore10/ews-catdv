@@ -40,5 +40,6 @@
 <script type="text/javascript" src="js/logic/Views.js"></script>
 <script type="text/javascript" src="js/logic/Forms.js"></script>
 
-<script type="text/javascript" src="js/ui/panels/NavbarLoginMenu.js"></script>
+<script type="text/javascript" src="js/logic/DownloadTracker.js"></script>
 
+<script type="text/javascript" src="js/ui/panels/NavbarLoginMenu.js"></script>
