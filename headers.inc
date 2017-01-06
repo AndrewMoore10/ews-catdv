@@ -45,3 +45,4 @@
 <script type="text/javascript" src="js/ui/panels/NavbarLoginMenu.js"></script>
 
 <script type="text/javascript" src="js/KGTV_CUSTOM.js"></script>
+<link rel="stylesheet" type="text/css" href="themes/kgtv_custom.css">
