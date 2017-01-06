@@ -33,16 +33,16 @@ var downloadTracker = function(){
 }
 var tracker = downloadTracker();
 
-//left click tracker
-$(document).on('click contextmenu', '.field_MF a', function(event){
-  // alert("Download clicked! " + getUrlParameter("id"));
-  // console.log(tracker);
-  // console.log(event);
+// =====
+// left and right click tracker
+// right click context menu is disabled by this code.
+// =====
+$(document).on('click contextmenu', '.mediaPath a', function(event){
   var href = event.target.href
   event.preventDefault();
   tracker.updateDownloadCount(getUrlParameter("id"),
     function(){
-      // console.log("success");
+      console.log("success");
       window.location = href;
     },
     function(){
@@ -53,7 +53,6 @@ $(document).on('click contextmenu', '.field_MF a', function(event){
   return false;
 })
 
-//right click tracker
 
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
