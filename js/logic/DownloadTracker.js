@@ -14,16 +14,16 @@
 var $catdv = catdv.RestApi;
 
 var downloadTracker = function(){
-  var downloadsField = "U12";
-  var downloadedByField = "U13";
+  var downloadsField = "catdv.master.download.count";
+  var downloadedByField = "catdv.master.downloaded..by";
   var functions = {
     updateDownloadCount : function(clipID, cb, fcb){
       $catdv.getClip(clipID, function(result){
         // console.log(result);
-        var downloadCount = (result.userFields && result.userFields.U12 ? parseInt(result.userFields.U12) : 0);
-        var downloadBy = (result.userFields && result.userFields.U13 ? result.userFields.U13 : "");
-        result.userFields.U12 = downloadCount + 1;
-        result.userFields.U13 = downloadBy + "<p>" + $.cookie("username") + " @ " + moment().format('MMMM Do YYYY, h:mm:ss a Z z') + "</p>\n";
+        var downloadCount = (result.userFields && result.userFields[downloadsField] ? parseInt(result.userFields[downloadsField]) : 0);
+        var downloadBy = (result.userFields && result.userFields[downloadedByField] ? result.userFields[downloadedByField] : "");
+        result.userFields[downloadsField] = downloadCount + 1;
+        rresult.userFields[downloadedByField] = downloadBy + "<p>" + $.cookie("username") + " @ " + moment().format('MMMM Do YYYY, h:mm:ss a Z z') + "</p>\n";
         $catdv.saveClip(result, cb, fcb);
         // cb();
       }, fcb);
