@@ -71,7 +71,8 @@ var ui;
                     window.open("simpleUpload.jsp", "Upload", "width=400,height=350");
                 }
                 else {
-                    window.open("uploadFiles.jsp", "Upload", "width=600,height=600");
+                    window.open("http://mastercat.ad.ewsad.net:8082/rss/newItem");
+                    // window.open("uploadFiles.jsp", "Upload", "width=600,height=600");
                 }
             });
             this.btnSelectMode.onClick(function (evt) {
