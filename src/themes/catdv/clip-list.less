@@ -1,0 +1,430 @@
+//
+// CatDV clip list view
+// --------------------------------------------------
+
+h3.loadingMessage {
+    margin: 10px 0px 0px 20px;  
+}
+
+
+#clipListContainer {
+	
+	position: relative;
+	
+	.clipListHeader {
+		
+		position: absolute;
+		top: 0px;
+		height: (@header-height - @navbar-height);
+		width: 100%;
+		
+		.viewControls {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+		}
+			
+		#listTitle {
+			position: absolute;
+			left: 10px;
+			bottom:15px;
+			right: 230px;
+			padding: 4px @padding-base-horizontal;
+			margin: 0;
+			white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: @header-title-color;
+
+            span {
+                font-weight: 400;
+                margin-left: 8px;
+            }
+		}
+	}
+	
+	.clipListPanel {
+		position: absolute;
+		top: (@header-height - @navbar-height);
+		width: 100%;
+		bottom: 0px;
+		
+		.clipsPanel {
+		    position: relative;
+		    height: 100%;
+		}
+		
+		.overlayPanel {
+		    position: absolute;
+		    left: 0px;
+		    right: 0px;
+		    top: 0px;
+		    bottom: 0px;
+		
+			.messagePanel {
+				position: absolute;
+				top: 40%;
+				width: 100%;
+				text-align: center;
+				font-size: 32px;
+				color: fade(@text-color, 33%);
+			}
+        }
+	}
+}
+
+.viewControls {
+	> .btn-group {
+		margin-left: 2px;
+		.btn {
+			.button-variant(fade(@text-color, 50%); fade(@body-bg, 50%); transparent);
+			&.btn-active {
+				color: @text-color;
+				background-color: @body-bg;
+				.box-shadow(none);
+			}
+		}
+	}
+}
+
+/******** Clip List View Styles ********/
+
+#tableView {
+}
+
+/******** Clip Grid View Styles ********/
+
+.gridView {
+        
+    .cell {
+        .unselectable();
+        
+        position: relative;
+        margin: 8px 8px 16px;
+        padding: 10px;
+        background-color: @grid-cell-bg;
+        border: 1px solid @grid-cell-border;
+        font-size: @font-size-small;
+        .box-shadow(1px 1px 3px 1px @grid-shadow-color);
+        
+        cursor:pointer;
+        
+        div.img-cont {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 5px;
+            overflow: hidden;
+            text-align: left;
+            > img {
+                max-width:100%;
+                max-height:100%;
+            }
+        }
+        
+        div.left {
+			display: inline-block;
+			vertical-align: top;
+			padding-right: 4px;
+			
+			div.img-cont {
+			     margin-bottom: 0px;
+			}
+        }
+        div.right {
+            display: inline-block;
+            border-left: 1px solid @grid-cell-border;
+            padding-left: 4px;
+            padding-top: 8px;
+        }
+        
+        img.typeicon {
+            position: absolute;
+            right: 2px;
+            top: 2px;
+        }
+        
+        div.selection-marker {
+            position : absolute;
+            bottom: 1px;
+            right: 1px;
+        }
+        
+        &:hover {
+            background-color: fade(@selected-color, 7%);
+        }
+        &.selected, &.selected:hover {
+            background-color: lighten(@selected-color, 20%); /* Fallback for browsers without transparency */
+	        background-color: fade(@selected-color, 20%);
+        }
+                
+        &.small {
+            padding: 5px;
+            width: @small-thumb-width;
+            div.img-cont {
+                height: ceil((@small-thumb-width - 10px) * (3/4) );
+                > span {
+                    height: 14px;
+                    font-size: 10px;
+                }
+            }  
+            div.right {
+                height: ceil((@small-thumb-width - 10px) * (3/4) );	
+            }         
+            &.right-text {
+                width: @small-thumb-width * 2;
+                > div {
+                    width: 50%;
+                    font-size: 10px;
+                }
+            }
+        }
+        &.medium {
+            width: @medium-thumb-width;
+            div.img-cont {
+                height: ceil((@medium-thumb-width - 20px) * (3/4) );
+            }
+            div.right {
+                height: ceil((@medium-thumb-width - 20px) * (3/4) ); 
+            }         
+            &.right-text {
+                width: @medium-thumb-width * 2;
+                > div.left, div.right {
+                    width: 50%;
+                    font-size: 11px;
+                }
+            }
+        }
+        &.large {
+            width: @large-thumb-width;
+            div.img-cont {
+                height: ceil((@large-thumb-width - 20px) * (3/4) );
+            }
+            div.right {
+                height: ceil((@large-thumb-width - 20px) * (3/4) ); 
+            }         
+            &.right-text {
+                width: @large-thumb-width * 2;
+                 > div {
+	                width: 50%;
+	            }
+            }
+        }
+        &.huge {
+            width: @huge-thumb-width;
+            div.img-cont {
+                height: ceil((@huge-thumb-width - 20px) * (3/4) );
+            }
+            div.right {
+                height: ceil((@huge-thumb-width - 20px) * (3/4) ); 
+            }         
+            &.right-text {
+                width: @huge-thumb-width * 2;
+                > div {
+                    width: 50%;
+                }
+            }
+        }
+     }
+}
+
+/******** Clip Filmstrip View Styles ********/
+
+.filmstripView {
+    
+    .filmstripRow {
+        
+        .unselectable();
+        
+        &:after {
+            content: '';
+            display:block;
+            height: 1px;
+            background-color:@table-border-color;
+
+        }
+        &:hover {
+            background-color: fade(@selected-color, 7%);
+        }
+        &.selected, &.selected:hover {
+            background-color: lighten(@selected-color, 20%); /* Fallback for browsers without transparency */
+	        background-color: fade(@selected-color, 20%);
+        }
+                
+        &:first-child {
+            margin-top: 10px;
+        }
+
+        &:last-child {
+            margin-bottom: 0px;
+            &:after {
+                background-color: transparent;
+            }
+        }
+
+        > .header {
+            position: relative;
+            vertical-align: top;
+            overflow: hidden;
+            padding: 18px 12px 4px 4px;
+            
+            img.typeicon {
+                position: absolute;
+                right: 4px;
+                top: 4px;
+            }
+            
+	        div.selection-marker {
+	            position : absolute;
+	            bottom: 1px;
+	            right: 1px;
+	        }
+        }
+
+        > .filmstrip {
+               
+            > .thumbnails {
+                
+                padding:0;
+                margin-bottom: 10px;
+                background-color: @filmstrip-cell-bg;
+                
+                &:before,
+                &:after {
+                    content: '';
+                    height:15px;
+                    display:block;
+                    background: url(../img/sprocket_hole.png) center top repeat-x @filmstrip-cell-bg;
+                    background-size: 12px 15px;
+                }
+                
+            
+                img {
+                    border-top: 0px;
+                    border-bottom: 0px;
+                    margin: 0px;
+                    margin-right:1px;
+                    padding: 0px;
+                    vertical-align: bottom;
+                    /* eliminates extra pixels below image that browser leaves for decenders(!) */
+                }
+            }
+        }
+    }
+    .small {        
+        .header {
+            width: 150px;
+            height: 65px;
+            font-size: 10px;
+            div.selection-marker > span.icon {
+                font-size: 18px;
+            }
+        }
+        .filmstrip {
+            padding-top: 8px;
+	        .thumbnails {
+	            &:before,
+	            &:after {
+	                background-size: 6px 8px;
+	                height:8px;         
+	            }
+	            img {
+	                height: 32px;
+	            }
+            }
+        }
+        img.still {
+            height: 44px;
+            margin-bottom: 8px;
+        }   
+    } 
+    .medium {
+        .header {
+            width: 180px;
+            height: 90px;
+            font-size: 12px;
+            div.selection-marker > span.icon {
+                font-size: 22px;
+            }
+        }
+        .filmstrip {
+            padding-top: 8px;
+            .thumbnails {
+	            &:before,
+	            &:after {
+	                background-size: 10px 12px;
+	                height:12px;            
+	            }
+	            img {
+	                height: 48px;
+	            } 
+            }  
+        } 
+        img.still {
+            height: 68px;
+            margin-bottom: 8px;
+        }   
+    }
+    .large {
+        .header {
+            width: 210px;
+            height: 124px;
+            font-size: 14px;
+            div.selection-marker > span.icon {
+                font-size: 28px;
+            }
+        }
+        .filmstrip {
+            padding-top: 8px;
+            .thumbnails {
+                img {
+		            height: 80px;
+		        }
+            }
+        }   
+        img.still {
+            height: 90px;
+            margin-bottom: 8px;
+        }
+    } 
+}
+
+/******** Clip Selection Indicator ********/
+
+div.selection-marker {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    text-decoration: none;
+    padding: 4px;
+     
+    &:focus {
+        outline: 0;
+    }
+      
+    > span.icon {
+        background-color: darken(@grid-cell-bg, 10%);
+        border-radius: 50%;
+        -webkit-box-shadow: 0 0 0 1px #d8d8d8;
+        box-shadow: 0 0 0 2px #d8d8d8;
+    }
+    > span.selected {
+        display: none;
+    }
+    > span.deselected {
+        display: inline-block;
+    }
+}
+
+/* indicator selection controlled by parent's (grid cell, table row etc.) selection state */
+.selected {
+	div.selection-marker {
+		> span.selected {
+    		display: inline-block;
+		}
+		> span.deselected {
+    		display: none;
+		}
+	}
+}
+

@@ -1,0 +1,249 @@
+//
+// CatDV admin
+// --------------------------------------------------
+
+
+.adminListPage {
+	
+	/* override standard spacing of drop down menus so they overlap the header a bit */
+    .dropdown-menu {
+        top: 80%
+    }
+    
+	@media (max-width: 1450px) {
+        li.admin-menu-wide {
+            display: none;	
+        }   
+	}
+
+    @media (min-width: 1450px) {
+	    li.admin-menu-compact {
+	        display: none;
+	    }
+    }
+	
+	> div.content {
+		left: 100px;
+		right: 100px;
+		padding: 0;
+		overflow:hidden;
+		
+		> .half-section {
+		  position: relative;
+		  height: 50%;
+		  border: 1px solid transparent; /* needed to stop margins of contained elements poking out! */
+		}
+	}
+		
+		
+	div.adminList {
+		position: absolute;
+		top: 60px; /* leave room for h1 title */
+		width: 100%;
+		bottom: 6px;
+	}
+	
+	footer {
+		position: absolute;
+		bottom: 0px;
+		height: 60px;
+		width: 100%;
+		padding: 10px 100px;
+		text-align: right;
+	}
+	
+	.list-filters {
+	   position: absolute;
+	   right: 0px;
+	   top: 25px;
+	   
+	   label {
+			font-weight: bold;
+			padding-left: 12px;
+			padding-right: 6px;	       
+	   }
+	   
+	}
+}
+
+.permissions-checklist {
+	height: 250px;
+}
+
+.panelVisibilityList {
+    height: 300px;
+    overflow: scroll;
+    overflow-x: hidden;
+    
+    ul {
+        list-style: none;
+        padding-left: 0px;
+    }
+
+    li {
+        margin: 0px;
+        font-weight: bold;
+        cursor: pointer;
+        
+        &.selected {
+            background-color: fade(@selected-color, 20%);
+        }
+        
+        .discloser {
+            font-size: 10px;
+        }
+    }
+
+    ul.filters {
+        padding-left: 12px;
+        
+        li {
+            font-weight: normal;
+            font-size: small;
+            margin-left: 12px;
+            
+            &.filterHeader {
+                font-style: italic;
+                font-size: smaller;
+                margin-left: 0px;
+            }
+
+            &.emptyMessage {
+                font-weight: normal;
+                color: @gray;
+            }
+        }       
+    }
+}
+
+#reorderUserFieldsDialog {
+    .userfield-list {
+        .empty-slot {
+            font-style: italic;
+        }
+    }
+    .form-group {
+        .btn {
+            width: 120px;
+        }
+    }
+}
+.settingsContainer {
+	height: 350px;
+	overflow: scroll;
+	overflow-x: hidden;
+	border: 1px solid @gray-light;
+	padding: 6px;
+	
+	&.color-scheme {
+	   padding-bottom: 90px;
+	}
+}
+  
+#mediaStoreList {
+	height: 500px;
+	width: 90%;
+	overflow: auto;
+	overflow-x: hidden;
+	border: 1px solid @gray-light;
+	padding: 10px;
+	margin-bottom: 16px;
+	
+	span.itemLabel {
+		
+		&.selected {
+			background-color: fade(@selected-color, 20%);
+		}
+		
+		.info {
+			font-style: italic;
+			color: @gray-dark;
+		}
+
+	}
+
+	span.mediaStore {
+		font-size: 17px;
+	}
+   
+    li.mediaType {
+		font-style: italic;
+		color: @gray-dark;
+		padding-left: 20px;
+		
+		.glyphicon {
+			font-size: 12px;
+		}
+	}
+
+    li.mediaPath {
+        padding-left: 40px;
+    }
+    
+    .itemContainer {
+        display: inline-block;
+        vertical-align: middle;
+        .editControl {
+            font-size: 12px;
+            visibility: hidden;
+        }
+        
+        &:hover .editControl {
+            visibility: visible;
+        }    
+    }   
+}
+
+div.group-box
+{
+	border-width: 1px;
+	border-style: solid;
+	border-color: @gray-dark;
+	margin-top: 20px;
+	padding: 18px 8px 12px 8px;
+    position: relative;
+    background-color: inherit;
+	
+	h5
+	{
+	    position: absolute;
+		top: -18px;
+		font-weight: bold;
+		background-color: inherit;
+	    padding: 0px 4px 0px 4px;
+		background-color: @modal-content-bg;
+	}
+}
+
+#editACLDialog
+{
+	.listbox 
+	{
+		position: relative;
+	    .message
+		{
+		    position: absolute;
+		    width: 100%;
+		    text-align: center;
+		    top: 40%;
+		    font-size: larger;
+		    font-style: italic;
+		    color: fade(@text-color, 30%);
+	    }
+	}
+	.group-box
+	{
+	   button {
+	       width: 100px;
+	   }
+	}
+}
+
+#viewExtendedDetailsDialog
+{
+	#lstDetails {
+	   max-height: 50%;
+	   overflow: auto;
+	}
+}
+

@@ -1,0 +1,63 @@
+//
+// CatDV Web Client - Custom Theme
+// --------------------------------------------------
+
+//Import core Bootstrap styles
+@import "../bootstrap-3.2.0/bootstrap.less";
+
+//Set colours and other variables
+@import "variables.less";
+
+//Import fonts
+@import "fonts.less";
+
+// CatDV components
+@import "../catdv/mixins.less";
+@import "../catdv/bootstrap-overrides.less";
+@import "../catdv/icons.less";
+@import "../catdv/controls.less";
+@import "../catdv/animations.less";
+@import "../catdv/pages.less";
+@import "../catdv/navigator.less";
+@import "../catdv/filters.less";
+@import "../catdv/clip-list.less";
+@import "../catdv/clip-details.less";
+@import "../catdv/media-player.less";
+@import "../catdv/sequence-editor.less";
+@import "../catdv/query-builder.less";
+@import "../catdv/admin.less";
+@import "../catdv/misc.less";
+
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: @input-color;
+}
+
+.theme-dump {
+    .content-bg { color : @content-bg; } 
+	.content-shade1 { color : @content-shade1; } 
+    .content-shade2 { color : @content-shade2; } 
+    .content-shade3 { color : @content-shade3; } 
+    .content-color { color : @content-color; } 
+    
+    .grid-cell-bg { color : @grid-cell-bg; } 
+    .grid-cell-shadow { color : @grid-cell-shadow; } 
+    
+    .nav-header-bg { color : @nav-header-bg; } 
+    .nav-header-color { color : @nav-header-color; } 
+    .nav-header-heading { color : @nav-header-heading; } 
+    
+    .nav-sidebar-bg { color : @nav-sidebar-bg; } 
+    .nav-sidebar-color { color : @nav-sidebar-color; } 
+    
+    .nav-panel-bg-color { color : @nav-panel-bg-color; } 
+    .nav-panel-color { color : @nav-panel-color; } 
+    .nav-panel-heading { color : @nav-panel-heading; } 
+    .nav-panel-link-color { color : @nav-panel-link-color; } 
+}
+            
+            

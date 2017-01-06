@@ -1,0 +1,217 @@
+// These variables override the Bootstrap's defaults
+// Copy variables from less/bootstrap/variables.less and set them here
+
+// Main Bootstrap Theme Colors
+
+
+// Branding
+@brand-primary:         #3698CF;
+            
+// Content
+@content-bg:            #FFFFFF; // white
+@content-color:         override(foreground(@content-bg), @override-content-color); // black
+
+// Grid View
+@grid-cell-bg:          #FFFFFF;
+@grid-cell-shadow:      override(#000000, @override-grid-cell-shadow); 
+
+// Navigation (Header / Footer)
+@nav-header-bg:         #E5E5E5;
+@nav-header-color:      override(foreground(@nav-header-bg), @override-nav-header-color);
+@nav-header-selected:   override(@content-color, @override-nav-header-selected);
+@nav-header-heading:    override(@brand-primary, @override-nav-header-heading);
+
+// Navigation (sidebar)
+@nav-sidebar-bg:        #F4F4F4;
+@nav-sidebar-color:     override(foreground(@nav-sidebar-bg), @override-nav-sidebar-color);
+
+// Nav Pop-out Panels
+@nav-panel-bg-color:    #7AC0E8;
+@nav-panel-color:       override(foreground(@nav-panel-bg-color), @override-nav-panel-color);
+@nav-panel-heading:     override(foreground(@nav-panel-bg-color), @override-nav-panel-heading);
+@nav-panel-link-color:  override(@brand-primary, @override-nav-panel-link-color);
+
+// Alerts
+@brand-danger:          override(#F04354, @override-brand-danger);
+
+@alert-danger-text:     @brand-danger;
+@alert-danger-bg:       fade(@brand-danger, 15%);
+@alert-danger-border:   fade(@brand-danger, 75%);
+
+// Fixed colors
+@tooltip-color:         #000000;
+@tooltip-bg:            #EEEE00; 
+
+
+@builtin-field-color:   #35C552;
+@user-field-color:      #C55235;
+@metadata-field-color:  #C535C5;
+
+@player-duration:       #DDD;
+@player-controls-bg:    #000;
+@player-controls:       #FFF;
+
+@transparent:           rgba(0,0,0,0);
+
+// Define Override Variable (values are not used)
+@override-content-color:        #F99;
+@override-grid-cell-shadow:     #F99;
+@override-nav-header-color:     #F99;
+@override-nav-header-selected:  #F99;
+@override-nav-header-heading:   #F99;
+@override-nav-sidebar-color:    #F99;
+@override-nav-panel-color:      #F99;
+@override-nav-panel-heading:    #F99;
+@override-nav-panel-link-color: #F99;
+@override-brand-danger:         #F99;
+@override-btn-primary-color:    #F99;
+
+// Derived theme colors
+@body-bg:                   @content-bg;
+@text-color:                @content-color;
+@link-color:                @brand-primary;
+@link-hover-color:          mix(@link-color, grayscale(@content-color), 70%);
+@selected-color:            fade(@brand-primary, 75%);
+@headings-color:            @brand-primary;
+@table-bg:                  @transparent;
+@table-bg-hover:            mix(@selected-color, grayscale(@content-bg), 80%);
+@table-border-color:        @content-shade1;
+@hr-border:                 @content-shade2;
+
+@content-shade1:            mix(foreground(@content-bg), @content-bg, 25%); // ligh-gray
+@content-shade2:            mix(foreground(@content-bg), @content-bg, 50%); // gray
+@content-shade3:            mix(foreground(@content-bg), @content-bg, 75%); // dark gray
+
+@btn-default-color:         @content-color;
+@btn-default-bg:            @content-shade2;
+@btn-default-border:        @content-shade3;
+
+@btn-primary-bg:            @brand-primary;
+@btn-primary-color:         override(foreground(@brand-primary), @override-btn-primary-color); 
+
+@input-color:               @content-color;   
+@input-bg:                  @content-bg;
+@input-bg-disabled:         @content-shade1;
+@input-border:              @brand-primary;
+@input-border-focus:        mix(@brand-primary, grayscale(@content-bg), 85%);
+@input-color-placeholder:   fade(@content-color, 30%);
+
+@dropdown-border:                           @content-shade2;
+@dropdown-bg:                               @input-bg;
+@dropdown-fallback-border:                  @dropdown-border;
+@dropdown-link-color:                       @input-color;
+@dropdown-link-hover-color:                 @content-shade3;
+@dropdown-link-hover-bg:                    mix(@selected-color, grayscale(@content-bg), 85%);
+
+@navbar-default-color:                      @nav-header-color;
+@navbar-default-bg:                         @nav-header-bg;
+@navbar-default-link-color:                 mix(@nav-header-color, grayscale(@nav-header-bg), 85%);
+@navbar-default-link-hover-color:           @nav-header-color;
+@navbar-default-link-hover-bg:              @transparent;
+@navbar-default-brand-hover-bg:             @brand-primary;
+@navbar-default-link-active-color:          @nav-header-selected; 
+@navbar-default-link-active-bg:             @transparent;
+@navbar-default-link-disabled-color:        @content-shade3;
+
+@nav-panel-link-hover-color:                mix(@nav-panel-link-color, grayscale(@nav-panel-bg-color), 80%);
+
+@nav-link-hover-bg:                         @transparent;
+
+@nav-tabs-border-color:                     @transparent;
+@nav-tabs-link-hover-border-color:          @transparent;
+@nav-tabs-active-link-hover-color:          @content-color;
+@nav-tabs-active-link-hover-border-color:   @brand-primary;
+
+@nav-panel-shadow:                          @content-shade3;
+
+@navigator-bg:                              @nav-sidebar-bg;
+@navigator-color:                           mix(@nav-sidebar-color, grayscale(@nav-sidebar-bg), 85%); 
+@navigator-hover-color:                     @nav-sidebar-color;
+
+@modal-content-bg:                          @body-bg;
+@modal-content-border-color:                fade(@content-color,20%);
+@modal-content-fallback-border-color:       @content-shade3;
+@modal-backdrop-bg:                         @content-shade2;
+@modal-header-border-color:                 @content-shade1;
+@modal-footer-border-color:                 @modal-header-border-color;
+@close-color:                               @text-color;
+
+@list-group-bg:             @transparent;
+@list-group-border:         @transparent;
+
+@panel-bg:                  @transparent;
+@panel-default-text:        @input-color;
+@panel-default-border:      @content-shade1;
+@panel-default-heading-bg:  @transparent;
+
+@header-title-color:        @nav-header-heading;
+@login-bg-color:            @body-bg;
+
+@grid-cell-border:          mix(@content-shade1, grayscale(@content-bg), 75%);
+@grid-shadow-color:         fade(@grid-cell-shadow, 20%);
+@filmstrip-cell-bg:         @content-shade3;
+
+@detail-field-color:        @text-color;
+@detail-field-bg:           @transparent;
+@detail-dropdown-bg:        @body-bg;
+
+@timeline_bg:               @content-shade1;
+@timeline_border:           @content-shade3;
+@timeline_selected_border:  @link-color;
+
+// Non-color-related rules
+
+@font-family-sans-serif:    'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-size-h1:              floor((@font-size-base * 2.3)); // ~32px
+@font-size-h2:              floor((@font-size-base * 1.7)); // ~24px
+@font-size-h3:              ceil((@font-size-base * 1.25)); // ~18px
+@font-size-h4:              ceil((@font-size-base * 1.14)); // ~16px
+@default-font-path:         "../../common/fonts/";
+@icon-font-path:            @default-font-path;
+@padding-base-vertical:     9px;
+@padding-base-horizontal:   20px;
+@padding-small-vertical:    5px;
+@padding-small-horizontal:  8px;
+@border-radius-base:        0px;
+@border-radius-large:       0px;
+@border-radius-small:       0px;
+@btn-font-weight:           700;
+@input-border-radius:       0;
+@navbar-height:             60px;
+@navbar-padding-horizontal: 0;
+@nav-link-padding:          10px 20px;
+@label-font-weight:         600;
+@list-group-border-radius:  0;
+@panel-body-padding:        15px 0;
+@panel-heading-padding:     10px 0;
+@panel-border-radius:       0;
+
+// CatDV variables
+
+@catdv-icon-font-name:      "CatDV-Icons";
+@catdv-icon-font-svg-id:    "CatDV-Icons";
+@catdv-icon-default-size:   24px;
+@tooltip-opacity:           .9;
+@header-height:             120px;
+@headings-font-weight:      300;
+@logo-large:                url('../img/logo_main.png');
+@logo-small:                url('../img/logo_other.png');
+@login-bg:                  url(../img/login_bg.jpg) repeat top center @login-bg-color;
+@main-navbar-background:    @navbar-default-bg url('../img/header_main.png') no-repeat left;
+@detail-navbar-background:  @navbar-default-bg url('../img/header_other.png') no-repeat left;
+@footer-height:             60px;
+@checkbox-padding:          0px;
+@font-size-sidenav:         ceil((@font-size-base * 1.14)); // ~16px  
+@btn-link-font-weight:      @btn-font-weight;
+@small-thumb-width:         90px;
+@medium-thumb-width:        140px;
+@large-thumb-width:         210px;
+@huge-thumb-width:          270px;
+@playhead-width:            90px;
+@navigator-width:           240px;
+@nav-panel-default-width:   480px;
+@nav-panel-wide-width:      750px;
+@zindex-sidenav:            1101;
+@zindex-menu-panel:         1100;
+
+

@@ -1,0 +1,164 @@
+
+<div id="editACLDialog" class="modal fade bs-modal-lg">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" data-dismiss="modal">&times;</button>
+				<h4 id="lblEditACLDialogTitle" class="modal-title">Edit Access Control List</h4>
+			</div>
+			<div class="modal-body">
+                <div class="group-box">
+                    <h5>Users/Roles</h5>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <form role="form">
+                                <div class="form-group">
+                                   <div id="listUserSelectors" class="form-control input-sm" style="height: 120px;"></div>                          
+                                </div>
+                            </form>
+                        </div>
+                       <div class="col-md-2" >
+	                       <p><button id="btnAddUserSelector" class="btn btn-default btn-sm">Add</button></p>
+                           <p><button id="btnEditUserSelector" class="btn btn-default btn-sm">Edit</button></p>
+                           <p><button id="btnDeleteUserSelector" class="btn btn-default btn-sm">Delete</button></p>
+                        </div>
+                    </div>
+                </div>
+						
+				<div class="group-box">
+				    <h5>Permissions</h5>
+				    <div class="row ">
+				         <div class="col-md-4"><label class="checkbox-inline"><input type="checkbox" id="createCatalogsAclChk"> Create new catalogs</label></div>
+				         <div class="col-md-4"><label class="checkbox-inline"><input type="checkbox" id="createClipsAclChk"> Create new clips</label></div>
+				         <div class="col-md-4"><label class="checkbox-inline"><input type="checkbox" id="readOthersCatalogsAclChk"> Read other's catalogs</label></div>
+				    </div>     
+				    <div class="row">                                 
+                              <div class="col-md-4"><label class="checkbox-inline"><input type="checkbox" id="editCatalogsAclChk"> Edit own catalogs</label></div>
+				        <div class="col-md-4"><label class="checkbox-inline"><input type="checkbox" id="editOthersCatalogsAclChk"> Edit other's catalogs</label></div>
+				        <div class="col-md-4"><label class="checkbox-inline"><input type="checkbox" id="deleteClipsAclChk"> Delete own clips</label></div>
+				    </div>
+				    <div class="row">
+                              <div class="col-md-4"><label class="checkbox-inline"><input type="checkbox" id="deleteCatalogsAclChk"> Delete own catalogs</label></div>
+                              <div class="col-md-4"><label class="checkbox-inline"><input type="checkbox" id="deleteOthersCatalogsAclChk"> Delete other's catalogs</label></div>
+				        <div class="col-md-4"><label class="checkbox-inline"><input type="checkbox" id="editPicklistAclChk"> Edit pick lists</label></div>
+				    </div>
+                          <div class="row">
+                              <div class="col-md-4"><label class="checkbox-inline"><input type="checkbox" id="editLockedFieldsAclChk"> Edit locked fields</label></div>
+                              <div class="col-md-4"><label class="checkbox-inline"><input type="checkbox" id="editTapesAclChk"> Tape management</label></div>
+                              <div class="col-md-4"><label class="checkbox-inline"><input type="checkbox" id="adminAclChk"> System administration</label></div>
+                          </div>
+				</div>
+				
+                <div class="group-box">
+                    <h5>Catalogs</h5>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <form role="form">
+                                <div class="form-group">
+                                   <div id="listTargetSelectors" class="form-control input-sm" style="height: 120px;"></div>                          
+                                </div>
+                            </form>
+                        </div>
+                       <div class="col-md-2" >
+                           <p><button id="btnAddTargetCatalogSelector" class="btn btn-default btn-sm">Add Catalogs</button></p>
+                           <p><button id="btnAddTargetRuleSelector" class="btn btn-default btn-sm">Add Rule</button></p>
+                           <p><button id="btnEditTargetSelector" class="btn btn-default btn-sm">Edit</button></p>
+                           <p><button id="btnDeleteTargetSelector" class="btn btn-default btn-sm">Delete</button></p>
+                       </div>
+                    </div>
+                </div>
+            </div>
+			<div class="modal-footer">
+				<button class="btn btn-primary" data-dismiss="modal">Cancel</button>
+				<button id="btnEditACLOK" class="btn btn-primary">OK</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="editUserSelectorDialog" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">User Selector</h4>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="form-group">
+						<label for="lstUserFields">Type</label> 
+						<select id="lstUserFields" class="form-control input-sm" width="100%"></select>
+					</div>
+					<div class="form-group">
+						<label for="lstUserSelection">Select Items</label> 
+						<div id="lstUserSelection" style="height: 300px;"></div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary" data-dismiss="modal">Cancel</button>
+				<button id="btnEditUserSelectorOK" class="btn btn-primary">OK</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="editCatalogSelectorDialog" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Catalog Selector</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="lstCatalogs">Select Items</label> 
+                        <div id="lstCatalogs" style="height: 300px;"></div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                <button id="btnEditCatalogSelectorOK" class="btn btn-primary">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="editTargetSelectorDialog" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Target Selector Rule</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="lstTargetFields">Field</label> 
+                        <select id="lstTargetFields" class="form-control input-sm" width="100%"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="lstTargetFieldValue">Value</label> 
+                        <select id="lstTargetFieldValue" class="form-control input-sm" width="100%"></select>
+                    </div>
+                   <div class="form-group">
+	                   <p><i>Values may include expressions that reference fields in the User or target object e.g.:</i></p>
+	                   <ul style="list-style-type:none;">
+                           <li>$&#123;user.name&#125;<i> - the logged in user's name</i></li>
+		                   <li>$&#123;user.role&#125;<i> - the logged in user's role</i></li>
+		                   <li>$&#123;user[user.defined.field]&#125;<i> - the value of the specified user-defined field</i></li>
+	                   </ul>
+	                   <p><i>These will be substituted for the referenced value to create the final value that this rule must match. 
+	                   The full list of fields can be found by consulting the REST API object model documentation</i></p>
+                   </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                <button id="btnEditTargetSelectorOK" class="btn btn-primary">OK</button>
+            </div>
+        </div>
+    </div>
+</div>

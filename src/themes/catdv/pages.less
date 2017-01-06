@@ -1,0 +1,402 @@
+//
+// CatDV pages
+// --------------------------------------------------
+
+
+.content-area() {
+	position: absolute;
+	top: @navbar-height;
+	left: 0px;
+	bottom: @footer-height;
+	right: 0px;
+	padding:0 60px;
+}
+
+.page-footer() {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	padding: 10px 20px;
+	text-align: right;
+	background: @navbar-default-bg;
+}
+
+.fullPage {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	
+	body {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		position: relative;
+		overflow: hidden;
+	}
+}
+
+#logo {
+	position: absolute;
+	z-index: @zindex-sidenav;
+	margin: 0;
+	padding: 10px;
+	height: @header-height;
+	width: @navigator-width;
+    background: @logo-large no-repeat center @brand-primary;
+}
+
+#loginPage {
+	
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	position: absolute;
+	background: @login-bg;
+	
+	.panel {
+		margin-top: (@header-height + 40);
+		background-color: darken(@body-bg, 10%); /* Fallback for browsers that don't do transparency */
+		background-color: fade(@body-bg, 70%);	
+		> .panel-body {
+			padding: 15px 30px;
+		}
+	}
+	
+}
+
+#version-info {
+	position : absolute;
+	right: 10px;
+	bottom: 10px;
+	color: fade(@body-bg, 70%);
+}
+
+#leftPanel {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: @navigator-width;
+	height: 100%;
+
+	
+	#navigatorPanel {
+		padding: 0;
+		margin: 0;
+	}
+}
+  
+header {
+  #btnClipBasket {
+     position: relative;
+     
+     span.badge {
+         position:absolute; 
+         top: 28px; 
+         left: 78%;
+         background-color: #169CCD;
+     }
+  }
+}
+
+#searchPage {
+	
+   #leftPanel {
+        #infoPanel {
+            position: absolute;
+            bottom: 0px;
+            color: black;
+            z-index: 1500;
+        }
+    }
+	
+	#mainPanel {
+		position: absolute;
+		top: 0;
+		left: @navigator-width;
+		bottom: 0px;
+		right: 0px;
+		margin: 0px;
+		padding: 0px;
+		
+		> header {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			height: @header-height;
+			right: 0px;
+			padding: 0px;
+			padding-left: @padding-base-horizontal;
+			background: @main-navbar-background;
+		}
+				
+		> div.content {
+			.content-area();
+		}
+		
+		> footer {
+			.page-footer();
+		}
+		
+        .navbar-default {
+            background: transparent;               
+        }		
+	}
+		
+ 	#clipListContainer {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 100%
+	}
+	
+	footer {
+        &.compact {
+            position: relative;
+            ul.action-buttons {		
+                position: absolute;
+                right: 0px;
+                bottom: 95%;
+                list-style-type: none;	
+                padding-left: 0px;
+                margin-bottom: 0px;
+                background-color: @btn-primary-bg;
+                
+                .collapse {
+                    display: none;
+                }
+                li {                                       
+                    .btn-primary {
+                        text-align: left;
+                        border-bottom: none;
+                        width: 100%;                        
+                    }
+                }	    
+		    }
+        }
+        &.full {
+            .hamburger-menu {
+                display: none;
+            }
+            ul.action-buttons {     
+                list-style-type: none;
+                display: inline;
+                margin-bottom: 0px;
+                li {
+                   display: inline-block;
+                }
+	        }
+		}	
+	}
+}
+
+#mediaStorePage {
+    #mediaStoreList {
+        height: 500px;
+        width: 90%;
+        overflow: auto;
+        overflow-x: hidden;
+        border: 1px solid #CCCCCC;
+        padding: 10px;
+        margin-bottom: 16px;
+    }
+    
+    #mediaStoreList span.itemLabel.selected {
+        background-color: #CCCCFF;
+    }
+    
+    #mediaStoreList span.itemLabel .info {
+        font-style: italic;
+        color: #999999;
+    }
+    
+    #mediaStoreList span.mediaStore {
+        font-size: 17px;
+    }
+    
+    #mediaStoreList li.mediaType {
+        font-style: italic;
+        color: #999999;
+        padding-left: 20px;
+    }
+    
+    #mediaStoreList li.mediaType .glyphicon {
+        font-size: 12px;
+    }
+    
+    #mediaStoreList li.mediaPath {
+        padding-left: 40px;
+    }
+}
+
+.detailPage,
+.adminListPage {
+	
+	> header {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		height: @navbar-height;
+		right: 0px;
+		padding: 0px;
+        z-index: 1;
+		
+		a.navbar-brand,
+		a.navbar-brand:hover {
+			display: inline-block;
+			width: @navigator-width;
+			height: @navbar-height;
+			background: @logo-small no-repeat center @brand-primary;
+		}
+		
+		.top-nav {
+            background: @detail-navbar-background;
+            margin-left: 240px;
+        }
+	}
+	
+	> div.content {
+		.content-area();
+		overflow: auto;
+	}
+	
+	> footer {
+		.page-footer();
+	}
+}
+
+.uploadPage {
+    margin: 0px;
+	
+	> footer {
+		.page-footer();
+	}
+	
+	.buttons {
+	}
+
+	#drop-files {
+		position: relative;
+		min-height: 150px;
+	}
+
+	#lblDropFiles {
+		position: absolute;
+		top: 100px;
+		left: 0px;
+		right: 0px;
+		margin: auto;
+		text-align: center;
+		font-size: 30px;
+		font-weight: bold;
+		opacity: 0.1;
+	}
+	
+	table.uploadForm {
+	    border-collapse: collapse;
+	    width: 100%;	    
+	    margin-bottom: 20px;
+	
+	    td,
+	    th {
+	        padding: 3px 0;
+	        text-align: left;
+	    }
+	
+	    tr {
+	        vertical-align: top;
+	    }
+	
+	    th {
+	        font-weight: 600;
+	        white-space: nowrap;
+	        width: 1%;
+	        padding-right: 15px;
+	        .unselectable();
+	        
+	    }
+	    
+	    tr.readonly th, tr.readonly td {
+	       color: @gray;
+	    }
+	
+	    input[type=text], 
+	    input[type=date], 
+	    input[type=time], 
+	    input[type=datetime] {
+	        width: 100%;
+	        padding-left: 4px;
+	    }
+	
+	    input[type=radio],
+	    input[type=checkbox] {
+	        margin-right: 4px;
+	    }
+	
+	    input[type=radio]:not(:first-child),
+	    input[type=checkbox]:not(:first-child) {
+	        margin-left: 10px;
+	    }
+	    	    
+	    textarea {
+	        width: 100%;
+	        padding-left: 0px;
+	    }
+	
+	    select {
+	        width: 100%;
+	        padding-left: 0px;
+	    }
+	    
+	    option {
+	        background-color: @input-bg;
+	    }
+	    
+	    .dropDownWrapper {
+	        position: relative;
+	    }
+	    
+	    .dropdown-list {
+	        > .input  {
+	            width: 100%;
+	       }
+	    }   
+	}
+	
+    textarea {
+	    width: 100%;
+		resize: none;
+	}
+
+	table {
+		td {
+			&.status {
+				
+			    position: relative;
+			    width: 100px;
+				
+				> .progress {
+					min-width: 100%;
+					margin-bottom:0;
+					position: relative;
+					
+					.progress-bar-status {
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						text-align: center;
+						color: #000;
+					}
+				}
+			}
+			
+		}
+		
+	}
+	
+}
+

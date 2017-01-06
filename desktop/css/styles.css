@@ -1,0 +1,1868 @@
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../../themes/common/fonts/glyphicons-halflings-regular.eot');
+  src: url('../../themes/common/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), 
+        url('../../themes/common/fonts/glyphicons-halflings-regular.woff') format('woff'), 
+        url('../../themes/common/fonts/glyphicons-halflings-regular.ttf') format('truetype'), 
+        url('../../themes/common/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+
+@font-face {
+  font-family: 'CatDV-Icons';
+  src: url('../../themes/common/fonts/CatDV-Icons.eot');
+  src: url('../../themes/common/fonts/CatDV-Icons.eot?#iefix') format('embedded-opentype'), 
+	  url('../../themes/common/fonts/CatDV-Icons.woff') format('woff'), 
+	  url('../../themes/common/fonts/CatDV-Icons.ttf') format('truetype'), 
+	  url('../../themes/common/fonts/CatDV-Icons.svg#CatDV-Icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+[hidden] {
+    display: none;
+}
+
+*,*:before,*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333333;
+    -webkit-border-radius: 1px;
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+html {
+    font-family: "Tahoma", sans-serif;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: inherit;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 11px;
+    position: relative;
+    overflow: hidden;
+    /* theme colours */
+    color: #dddddd;
+    background-color: #404040;
+}
+
+input, select, button, textarea, a {
+    font-family: "Tahoma", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #ddddff;
+}
+
+h4,.h4 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+input, textarea {
+    font-family: "Tahoma", sans-serif;
+    font-size: 11px;
+    padding: 1px 2px 1px 4px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/******** Bootstrap Glyph Icons ********/
+
+.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+}
+
+.glyphicon-chevron-left:before { content: "\e079"; }
+.glyphicon-film:before { content: "\e009"; }
+.glyphicon-search:before { content: "\e003"; }
+.glyphicon-step-backward:before { content: "\e069"; }
+.glyphicon-fast-backward:before { content: "\e070"; }
+.glyphicon-ok:before { content: "\e013"; }
+.glyphicon-pencil:before { content: "\270f"; }
+.glyphicon-play:before { content: "\e072"; }
+.glyphicon-pause:before { content: "\e073"; }
+.glyphicon-refresh:before { content: "\e031"; }
+.glyphicon-remove:before { content: "\e014"; }
+.glyphicon-fast-forward:before { content: "\e076"; }
+.glyphicon-step-forward:before { content: "\e077"; }
+.glyphicon-th-large:before { content: "\e010"; }
+.glyphicon-th-list:before { content: "\e012"; }
+.glyphicon-plus-sign:before { content: "\e081"; }
+.glyphicon-minus-sign:before { content: "\e082"; }
+
+.glyph-rotate-90 {  
+  -webkit-transform:rotate(90deg);
+  -moz-transform:rotate(90deg);
+  -o-transform:rotate(90deg);
+  /* filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1.5); */
+  -ms-transform:rotate(90deg);        
+}
+
+.glyph-rotate-270 {  
+  -webkit-transform:rotate(270deg);
+  -moz-transform:rotate(270deg);
+  -o-transform:rotate(270deg);
+  /* filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1.5); */
+  -ms-transform:rotate(270deg);        
+}
+
+/******** CatDV Icons ********/
+
+.catdvicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'CatDV-Icons';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 24px;
+}
+
+
+.catdvicon-add_min:before {content: "\e600"; } 
+.catdvicon-add:before {content: "\e601"; } 
+.catdvicon-catalogs:before {content: "\e602"; } 
+.catdvicon-chevron:before {content: "\e603"; } 
+.catdvicon-close_panel:before {content: "\e604"; } 
+.catdvicon-close:before {content: "\e605"; } 
+.catdvicon-edit:before {content: "\e606"; } 
+.catdvicon-expand:before {content: "\e607"; } 
+.catdvicon-filmstrip_view:before {content: "\e608"; } 
+.catdvicon-filters:before {content: "\e609"; } 
+.catdvicon-list_view:before {content: "\e60a"; } 
+.catdvicon-media_paths:before {content: "\e60d"; } 
+.catdvicon-order_arrow:before {content: "\e60e"; } 
+.catdvicon-pulldown_arrow:before {content: "\e60f"; } 
+.catdvicon-remove_min:before {content: "\e610"; } 
+.catdvicon-remove:before {content: "\e611"; } 
+.catdvicon-saved_queries:before {content: "\e612"; } 
+.catdvicon-search:before {content: "\e613"; } 
+.catdvicon-thumb_view:before {content: "\e614"; } 
+.catdvicon-untick:before {content: "\e615"; } 
+.catdvicon-tick:before {content: "\e616"; } 
+.catdvicon-tick_min:before {content: "\e619"; } 
+.catdvicon-event_marker:before {content: "\e617"; } 
+.catdvicon-range_marker:before {content: "\e618"; } 
+.catdvicon-mark_in:before {content: "\e60b"; } 
+.catdvicon-mark_out:before {content: "\e60c"; } 
+.catdvicon-subclip:before {content: "\e61b"; } 
+.catdvicon-blank:before {content: "\e61a"; } 
+
+
+/* Bootstrap DropDown Button Styles */
+
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px solid;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+.dropdown {
+  position: relative;
+}
+.dropdown-toggle:focus {
+  outline: 0;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: 14px;
+  list-style: none;
+  background-color: #404040;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+.dropdown-menu.pull-right {
+  right: 0;
+  left: auto;
+}
+.dropdown-menu .divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+.dropdown-menu > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.428571429;
+  color: #dddddd;
+  white-space: nowrap;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  color: #262626;
+  text-decoration: none;
+  background-color: #f5f5f5;
+}
+
+.open > .dropdown-menu {
+  display: block;
+}
+.open > a {
+  outline: 0;
+}
+
+
+
+button {
+  display: inline-block;
+  padding: 2px 6px;
+  margin-bottom: 0;
+  margin-right: 8px;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+       -o-user-select: none;
+          user-select: none;
+  color: #dddddd;
+  background-image: none;
+  background-color: #fff;
+  background: linear-gradient(to bottom, #505050 0%,#333 100%);
+  border: 1px solid #000000;
+}
+
+button:active,
+button.active {
+  outline: 5px auto #CCCCCC;
+}
+
+button:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+button:hover  {
+  background: linear-gradient(to bottom, #666 0%,#333 100%);
+  color: #ddeeff;
+}
+
+button.disabled,
+button[disabled]  {
+  pointer-events: none;
+  cursor: not-allowed;
+  filter: alpha(opacity=65);
+  /*-webkit-box-shadow: none;
+          box-shadow: none; JV - seems to cause buttons to lose their left hand border*/
+  opacity: .65;
+}
+
+
+.btn-group {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.btn-group > button  {
+  position: relative;
+  float: left;
+  border-collapse: collapse;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.btn-group > button:hover,
+.btn-group > button:focus,
+.btn-group > button:active,
+.btn-group > button.active {
+    z-index: 2;
+}
+
+.btn-group > button:focus {
+  outline: none;
+}
+
+.btn-group > button:first-child {
+  border-right-width: 0px;
+}
+
+
+/******** Bootstrap Tab Styles ********/
+
+.nav-tabs{
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  border-bottom: 1px solid #666666;
+}
+
+.nav-tabs:before,
+.nav-tabs:after {
+  display: table;
+  content: " ";
+}
+
+.nav-tabs:after {
+  clear: both;
+}
+
+.nav-tabs> li {
+  position: relative;
+  display: block;
+  float: left;
+  margin-bottom: -1px;
+}
+
+.nav-tabs> li > a {
+  position: relative;
+  display: block;
+  padding: 2px 4px;
+  margin-right: 2px;
+  line-height: 1.428571429;
+  border: 1px solid #666666;
+  text-decoration: none;
+  color: #dddddd;
+  background-color: rgba(0,0,0,0.3);
+}
+
+.nav-tabs> li > a:hover,
+.nav-tabs> li > a:focus {
+  text-decoration: none;
+  background-color: rgba(255,255,255,0.3);
+}
+
+.nav-tabs> li.disabled > a {
+  color: #999999;
+}
+
+.nav-tabs> li.disabled > a:hover,
+.nav-tabs> li.disabled > a:focus {
+  text-decoration: none;
+  cursor: not-allowed;
+}
+
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  cursor: default;
+  background-color: #404040;
+  border-bottom-color: transparent;
+}
+
+.tab-content > .tab-pane {
+  display: none;
+}
+
+.tab-content > .active {
+  display: block;
+}
+
+
+/* Bootstrap Modal Dialog */
+.modal-open {
+  overflow: hidden;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  overflow: auto;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+.modal.fade .modal-dialog {
+  -webkit-transition: -webkit-transform .3s ease-out;
+     -moz-transition:    -moz-transform .3s ease-out;
+       -o-transition:      -o-transform .3s ease-out;
+          transition:         transform .3s ease-out;
+  -webkit-transform: translate(0, -25%);
+      -ms-transform: translate(0, -25%);
+          transform: translate(0, -25%);
+}
+.modal.in .modal-dialog {
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+.modal-content {
+  position: relative;
+  background-color: #333;
+  background-clip: padding-box;
+  border: 1px solid #000;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 6px;
+  outline: none;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+          box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000;
+}
+.modal-backdrop.fade {
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+.modal-backdrop.in {
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+.modal-header {
+  min-height: 16.428571429px;
+  padding: 6px 12px;
+  border-bottom: 1px solid #000;
+}
+.modal-header .close {
+  margin-top: -2px;
+}
+.modal-title {
+  margin: 0;
+  line-height: 1.428571429;
+}
+.modal-body {
+  position: relative;
+  padding: 12px;
+}
+.modal-footer {
+  padding: 6px 12px;
+  margin-top: 8px;
+  text-align: right;
+  border-top: 1px solid #000;
+}
+.modal-footer .btn + .btn {
+  margin-bottom: 0;
+  margin-left: 5px;
+}
+.modal-footer .btn-group .btn + .btn {
+  margin-left: -1px;
+}
+.modal-footer .btn-block + .btn-block {
+  margin-left: 0;
+}
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 600px;
+    margin: 30px auto;
+  }
+  .modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+  }
+  .modal-sm {
+    width: 400px;
+  }
+  .modal-lg {
+    width: 900px;
+  }
+}
+
+
+/******** Progress Bar Styles ********/
+
+@-webkit-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+.progress {
+    overflow: hidden;
+    height: 16px;
+    margin-bottom: 16px;
+    background-color: #1c1e22;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    float: left;
+    width: 0%;
+    height: 100%;
+    font-size: 11px;
+    line-height: 16px;
+    color: #ffffff;
+    text-align: center;
+    background-color: #7a8288;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+    -webkit-transition: width 0.6s ease;
+    transition: width 0.6s ease;
+}
+
+.progress-bar-striped .progress-bar {
+    background-color: #f0ad4e;
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .25) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .25) 50%, rgba(255, 255, 255, .25) 75%, transparent 75%, transparent);
+    background-image:         linear-gradient(45deg, rgba(255, 255, 255, .25) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .25) 50%, rgba(255, 255, 255, .25) 75%, transparent 75%, transparent);
+    background-size: 40px 40px;
+}
+
+.progress.active .progress-bar {
+    -webkit-animation: progress-bar-stripes 2s linear infinite;
+    animation: progress-bar-stripes 2s linear infinite;
+}
+
+
+/******** DataTable Control Styles ********/
+
+div.dt-wrapper,
+div.dt-header,
+div.dt-footer,
+table.dt-table,
+table.dt-table thread,
+table.dt-table tbody,
+table.dt-table tr
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+div.dt-wrapper {
+    height: 100%;
+    position: relative;
+    padding-bottom: 28px; /* height of footer */
+}
+
+table.dt-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+
+table.dt-table th,
+table.dt-table td
+{
+    border: 1px solid #000;
+    padding: 2px 4px;
+    overflow: hidden;
+    /* prevent text being selected when you double click row */
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    white-space: nowrap;
+}
+
+table.dt-table tr.selected td
+{
+    background-color: #555555;
+}
+
+table.dt-table thead>tr>th {
+    vertical-align: bottom;
+    background-color: #333333;
+}
+
+div.dt-header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+div.dt-body {
+    height: 100%;
+    overflow: auto;
+}
+
+div.dt-spacer {
+    height: 1px;
+}
+
+div.dt-footer {
+    position: absolute;
+    width: 100%;
+    height: 28px;
+    bottom: 0;
+    border-top: 1px solid #999999;
+}
+
+/* Paging Controls - shared by DataTable and ClipList views */
+
+ul.paging {
+    display: inline-block;
+    margin: 8px 0px 0px 0px;
+    float: right;
+}
+
+ul.paging li {
+    display: inline;
+    margin: 4px 10px 4px 10px;
+}
+
+
+/* ------ TreeView ------ */
+div.treeView
+{
+    overflow: auto; 
+    overflow-x: hidden; 
+}
+
+.treeView ul {
+    list-style: none;
+    padding-left: 0px;
+    margin: 1px;
+}
+
+.treeView li {
+    margin: 0px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.treeView li .discloser {
+    font-size: 10px;
+}
+
+.treeView li span.nodeLabel.selected {
+    background-color: #3399CC;
+}
+
+.treeView ul.indented
+{
+    padding-left: 12px;
+}
+
+.treeView li.leaf
+{
+    padding-left: 12px;
+}
+
+.treeView ul.hidden {
+    display : none;
+}
+
+
+/******** AutoSuggest / MultiSelect-DropDownList Control ********/
+/* line 35, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\controls.less */
+.dropdown-list {
+  position: relative;
+  margin: 0px;
+}
+/* line 39, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\controls.less */
+.dropdown-list > .input {
+  display: inline-block;
+  position: relative;
+}
+/* line 43, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\controls.less */
+.dropdown-list > .input input.preview {
+  color: rgba(255, 255, 255, 0.33);
+}
+/* line 47, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\controls.less */
+.dropdown-list > .input > .arrow {
+  position: absolute;
+  border-width: 6px 4px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: #061219;
+  top: 8px;
+  right: 4px;
+}
+/* line 58, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\controls.less */
+.dropdown-list > .popup {
+  position: absolute;
+  border: 1px solid #3698cf;
+  background: #ffffff;
+  margin: 0px;
+  padding: 4px;
+  max-height: 400px;
+  overflow: scroll;
+  overflow-x: hidden;
+  z-index: 1500;
+}
+/* line 70, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\controls.less */
+.dropdown-list > .popup > .item:hover {
+  background-color: #3698cf;
+}
+/* line 73, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\controls.less */
+.dropdown-list > .popup > .item.selected {
+  background-color: #7ac0e8;
+}
+/* line 76, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\controls.less */
+.dropdown-list > .popup > .item a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  width: 100%;
+}
+
+
+/******** Tree Navigator Styles ********/
+
+.tree-navigator h3
+{
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #3399cc;
+    width: 100%;
+    border-bottom: 1px solid #000;
+    margin-top: 2px;
+    margin-bottom: 4px;
+}
+
+/******** Splitter Styles ********/
+
+
+div.splitter-handle {
+    background-color: #555555;
+}
+
+div.splitter-handle.horizontal {
+    cursor: e-resize;
+    border-left: 1px solid #555555;
+    border-right: 1px solid #555555;
+}
+
+div.splitter-handle.vertical {
+    cursor: s-resize;
+    border-top: 1px solid #555555;
+    border-bottom: 1px solid #555555;
+}
+
+
+/******** Clip Grid View Styles ********/
+
+/* line 77, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell {
+  position: relative;
+  margin: 4px 4px 8px;
+  padding: 6px;
+  background-color: #323232;
+  border: 1px solid #656565;
+  font-size: 12px;
+/*  -webkit-box-shadow: 1px 1px 3px 1px rgba(6, 18, 25, 0.95);
+  box-shadow: 1px 1px 3px 1px rgba(6, 18, 25, 0.95); */
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* line 88, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell div.img-cont {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 5px;
+  overflow: hidden;
+  text-align: left;
+}
+/* line 95, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell div.img-cont > img {
+  max-width: 100%;
+  max-height: 100%;
+}
+/* line 101, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell div.left {
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 4px;
+}
+/* line 106, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell div.left div.img-cont {
+  margin-bottom: 0px;
+}
+/* line 110, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell div.right {
+  display: inline-block;
+  border-left: 1px solid #656565;
+  padding-left: 4px;
+  padding-top: 8px;
+}
+/* line 117, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell img.typeicon {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+}
+/* line 123, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell div.selection-marker {
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+}
+/* line 129, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell:hover {
+  background-color: rgba(122, 192, 232, 0.07);
+}
+/* line 132, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell.selected,
+.gridView .cell.selected:hover {
+  background-color: #d1e9f7;
+  /* Fallback for browsers without transparency */
+  background-color: rgba(122, 192, 232, 0.2);
+}
+/* line 137, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell.small {
+  padding: 5px;
+  width: 90px;
+}
+/* line 140, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell.small div.img-cont {
+  height: 60px;
+}
+/* line 142, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell.small div.img-cont > span {
+  height: 14px;
+  font-size: 10px;
+}
+/* line 147, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell.small div.right {
+  height: 60px;
+}
+/* line 150, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell.small.right-text {
+  width: 180px;
+}
+/* line 152, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell.small.right-text > div {
+  width: 50%;
+  font-size: 10px;
+}
+/* line 158, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell.medium {
+  width: 140px;
+}
+/* line 160, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell.medium div.img-cont {
+  height: 90px;
+}
+/* line 163, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell.medium div.right {
+  height: 90px;
+}
+/* line 166, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell.medium.right-text {
+  width: 280px;
+}
+/* line 168, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell.medium.right-text > div.left,
+.gridView .cell.medium.right-text div.right {
+  width: 50%;
+  font-size: 11px;
+}
+/* line 174, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell.large {
+  width: 210px;
+}
+/* line 176, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell.large div.img-cont {
+  height: 143px;
+}
+/* line 179, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell.large div.right {
+  height: 143px;
+}
+/* line 182, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell.large.right-text {
+  width: 420px;
+}
+/* line 184, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell.large.right-text > div {
+  width: 50%;
+}
+/* line 189, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell.huge {
+  width: 270px;
+}
+/* line 191, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell.huge div.img-cont {
+  height: 188px;
+}
+/* line 194, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell.huge div.right {
+  height: 188px;
+}
+/* line 197, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell.huge.right-text {
+  width: 540px;
+}
+/* line 199, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.gridView .cell.huge.right-text > div {
+  width: 50%;
+}
+/******** Clip Filmstrip View Styles ********/
+/* line 211, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .filmstripRow {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* line 215, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .filmstripRow:after {
+  content: '';
+  display: block;
+  height: 1px;
+  background-color: #727272;
+}
+/* line 222, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .filmstripRow:hover {
+  background-color: rgba(122, 192, 232, 0.07);
+}
+/* line 225, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .filmstripRow.selected,
+.filmstripView .filmstripRow.selected:hover {
+  background-color: #d1e9f7;
+  /* Fallback for browsers without transparency */
+  background-color: rgba(122, 192, 232, 0.2);
+}
+/* line 230, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .filmstripRow:first-child {
+  margin-top: 10px;
+}
+/* line 234, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .filmstripRow:last-child {
+  margin-bottom: 0px;
+}
+/* line 236, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .filmstripRow:last-child:after {
+  background-color: transparent;
+}
+/* line 241, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .filmstripRow > .header {
+  position: relative;
+  vertical-align: top;
+  overflow: hidden;
+  padding: 18px 12px 4px 4px;
+}
+/* line 247, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .filmstripRow > .header img.typeicon {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+}
+/* line 253, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .filmstripRow > .header div.selection-marker {
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+}
+/* line 262, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .filmstripRow > .filmstrip > .thumbnails {
+  padding: 0;
+  margin-bottom: 10px;
+  background-color: #727272;
+}
+/* line 268, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .filmstripRow > .filmstrip > .thumbnails:before,
+.filmstripView .filmstripRow > .filmstrip > .thumbnails:after {
+  content: '';
+  height: 15px;
+  display: block;
+  background: url(../img/filmstrip_hole.png) center top repeat-x #727272;
+  background-size: 12px 15px;
+}
+/* line 278, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .filmstripRow > .filmstrip > .thumbnails img {
+  border-top: 0px;
+  border-bottom: 0px;
+  margin: 0px;
+  margin-right: 1px;
+  padding: 0px;
+  vertical-align: bottom;
+  /* eliminates extra pixels below image that browser leaves for decenders(!) */
+}
+/* line 291, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .small .header {
+  width: 150px;
+  height: 65px;
+  font-size: 10px;
+}
+/* line 295, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .small .header div.selection-marker > span.icon {
+  font-size: 18px;
+}
+/* line 299, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .small .filmstrip {
+  padding-top: 8px;
+}
+/* line 302, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .small .filmstrip .thumbnails:before,
+.filmstripView .small .filmstrip .thumbnails:after {
+  background-size: 6px 8px;
+  height: 8px;
+}
+/* line 307, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .small .filmstrip .thumbnails img {
+  height: 32px;
+}
+/* line 312, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .small img.still {
+  height: 44px;
+  margin-bottom: 8px;
+}
+/* line 318, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .medium .header {
+  width: 180px;
+  height: 90px;
+  font-size: 12px;
+}
+/* line 322, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .medium .header div.selection-marker > span.icon {
+  font-size: 22px;
+}
+/* line 326, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .medium .filmstrip {
+  padding-top: 8px;
+}
+/* line 329, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .medium .filmstrip .thumbnails:before,
+.filmstripView .medium .filmstrip .thumbnails:after {
+  background-size: 10px 12px;
+  height: 12px;
+}
+/* line 334, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .medium .filmstrip .thumbnails img {
+  height: 48px;
+}
+/* line 339, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .medium img.still {
+  height: 68px;
+  margin-bottom: 8px;
+}
+/* line 345, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .large .header {
+  width: 210px;
+  height: 124px;
+  font-size: 14px;
+}
+/* line 349, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .large .header div.selection-marker > span.icon {
+  font-size: 28px;
+}
+/* line 353, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .large .filmstrip {
+  padding-top: 8px;
+}
+/* line 356, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .large .filmstrip .thumbnails img {
+  height: 80px;
+}
+/* line 361, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\clip-list.less */
+.filmstripView .large img.still {
+  height: 90px;
+  margin-bottom: 8px;
+}
+
+
+
+/******** Media Player Controls Styles ********/
+
+#playerControls {
+    position: absolute;
+    background-color: #333333;
+    color: white;
+    font-size: 18px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    height: 48px;
+    padding: 8px;
+}
+
+#playerControls #timeline {
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    height: 8px;
+    right: 4px;
+    background-color: #9999AA;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    z-index: 0;
+}
+
+#playerControls #selection {
+    position: absolute;
+    height: 8px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: #9999FF;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    z-index: 5;
+}
+
+#playerControls #playhead {
+    position: absolute;
+    width: 16px;
+    height: 10px;
+    top: -1px;
+    left: 0px;
+    background-color: #CCCCCC;
+    border: 1px solid #000000;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    z-index: 10;
+}
+
+#playerControls #controlBarLeft {
+    position: absolute;
+    left: 4px;
+    top: 18px;
+    font-size: 16px;
+}
+
+#playerControls #controlBarRight {
+    position: absolute;
+    right: 4px;
+    top: 18px;
+    font-size: 16px;
+}
+
+#playerControls span {
+    display: inline-block;
+}
+
+#playerControls .playerControlButton {
+    padding: 0px 6px 0px 6px;
+    cursor: pointer;
+}
+
+#playerControls .playerControlButton.disabled {
+    color: #666666;
+}
+
+#playerControls .moveTimes {
+    position: relative;
+    top: -2px;
+    font-size: 10px;
+}
+
+#playerControls #movieDuration {
+    color: #9999AA;
+}
+
+#playerControls .moveTimes {
+    font-size: 10px;
+}
+
+#playerControls #markInBtn,#playerControls #markOutBtn {
+    padding: 1px 6px 1px 6px;
+    font-size: 16px;
+}
+
+#playerControls #addMarkerBtn {
+    position: relative;
+    top: 3px;
+}
+
+
+/******** Details Styles ********/
+
+/* line 5, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.details {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+}
+/* line 9, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.details.inset {
+  margin: 20px 8px 0px 8px;
+}
+/* line 13, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.details td,
+table.details th {
+  padding: 3px 0;
+  text-align: left;
+}
+/* line 19, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.details tr {
+  vertical-align: top;
+}
+/* line 22, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.details tr input[type=text],
+table.details tr input[type=date],
+table.details tr input[type=time],
+table.details tr input[type=datetime] {
+  width: 100%;
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  padding-left: 4px;
+}
+/* line 31, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.details tr input[type=radio],
+table.details tr input[type=checkbox] {
+  margin-right: 4px;
+}
+/* line 36, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.details tr input[type=radio]:not(:first-child),
+table.details tr input[type=checkbox]:not(:first-child) {
+  margin-left: 10px;
+}
+/* line 41, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.details tr input,
+table.details tr select,
+table.details tr textarea {
+  color: #ffffff;
+  background-color: transparent;
+}
+/* line 48, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.details tr input.shadow {
+  color: rgba(255, 255, 255, 0.33);
+}
+/* line 52, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.details tr textarea {
+  width: 100%;
+  border: 1px solid rgba(128, 128, 128, 0.33);
+  padding-left: 0px;
+}
+/* line 58, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.details tr select {
+  width: 100%;
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  padding-left: 0px;
+}
+/* line 64, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.details tr option {
+  background-color: #ffffff;
+}
+/* line 68, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.details tr .dropDownWrapper {
+  position: relative;
+}
+/* line 73, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.details tr .dropdown-list > .input {
+  width: 100%;
+  border: 1px solid transparent;
+}
+/* line 77, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.details tr .dropdown-list > .input > .arrow {
+  border-top-color: #ffffff;
+}
+/* line 81, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+/* table.details tr .dropdown-list > .input:hover, */
+table.details tr .dropdown-list > .input.focus {
+  border: 1px solid #666666;
+}
+/* line 85, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.details tr .dropdown-list > .popup {
+  background: #404040;
+}
+/* line 90, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.details tr input.editable {
+  border: 1px solid rgba(192, 192, 192, 0.5);
+}
+/* line 93, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.details tr select.editable {
+  border: 1px solid rgba(192, 192, 192, 0.5);
+}
+/* line 96, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.details tr textarea.editable {
+  border: 1px solid rgba(192, 192, 192, 0.5);
+}
+/* line 101, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.details tr:hover input.editable {
+  border: 1px solid #246c95;
+}
+/* line 104, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.details tr:hover select.editable {
+  border: 1px solid #246c95;
+}
+/* line 107, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.details tr:hover textarea.editable {
+  border: 1px solid #246c95;
+}
+/* line 112, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.details tr .star.deselected {
+  color: rgba(255, 255, 255, 0.15);
+}
+/* line 117, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.details th {
+  font-weight: 600;
+  white-space: nowrap;
+  width: 1%;
+  padding-right: 15px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* line 126, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.details tr.readonly th,
+table.details tr.readonly td {
+  color: #d8d8d8;
+}
+/* line 134, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.history th {
+  font-size: smaller;
+  border-bottom: 1px solid #CCCCCC;
+}
+/* line 139, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+table.history td {
+  border: 0;
+  font-size: smaller;
+}
+/* line 145, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+.ratings {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* line 146, C:\Users\john\Projects\SquareBox\CatDVServer6.10\src\webapp\catdv-web2\src\themes\catdv\clip-details.less */
+.ratings span {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+
+/******** Event Marker Panel Styles ********/
+
+.eventMarkerTimeline {
+    margin-top: 8px;
+}
+
+.eventMarkerTimeline .header {
+    height: 24px;
+    font-size: 12px;
+    padding: 4px;
+}
+
+.eventMarkerTimeline .header .description
+{
+    font-size: smaller;
+    font-style: italic;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.eventMarkerTimeline .header .buttons a
+{
+    margin-left: 8px;
+}
+
+.eventMarkerTimeline .timeline {
+    height: 4px;
+    background-color: #d8d8d8;
+}
+
+.eventMarkerTimeline.selected .timeline {
+    border-color: #6666CC;
+}
+
+.eventMarkerTimeline .range {
+    height: 4px;
+    background-color: #CCCCFF;
+}
+
+.eventMarkerTimeline .mark,
+.eventMarkerTimeline .mark-in,
+.eventMarkerTimeline .mark-out {
+  width: 12px;
+  top: -4px;
+  padding: 0;
+  background-color: transparent;
+}
+
+.eventMarkerTimeline .mark:before,
+.eventMarkerTimeline .mark-in:before,
+.eventMarkerTimeline .mark-out:before {
+  content: ' ';
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: #FFF;
+  border: 2px solid #acacac;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.eventMarkerTimeline .mark:hover:before,
+.eventMarkerTimeline .mark-in:hover:before,
+.eventMarkerTimeline .mark-out:hover:before {
+  border-color: #727272;
+}
+
+.eventMarkerTimeline .mark-in,
+.eventMarkerTimeline .mark-out {
+  visibility: hidden;
+}
+
+.eventMarkerTimeline.selected .mark-in,
+.eventMarkerTimeline.selected .mark-out {
+  visibility: visible;
+}
+
+
+/******** Query Builder  ********/
+
+/* line 5, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\query-builder.less */
+.queryBuilder {
+  background-color: inherit;
+}
+/* line 9, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\query-builder.less */
+.queryBuilder .btn .catdvicon {
+  color: #3698cf;
+}
+/* line 12, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\query-builder.less */
+.queryBuilder .btn .catdvicon-remove {
+  color: #f04354;
+}
+/* line 16, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\query-builder.less */
+.queryBuilder .btn:hover .catdvicon {
+  color: #287baa;
+}
+/* line 19, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\query-builder.less */
+.queryBuilder .btn:hover .catdvicon-remove {
+  color: #ec1429;
+}
+/* line 25, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\query-builder.less */
+.queryBuilder .termsPanel {
+  margin-bottom: 10px;
+}
+/* line 28, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\query-builder.less */
+.queryBuilder .termsPanel .queryTerm {
+  margin-bottom: 8px;
+}
+/* line 32, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\query-builder.less */
+.queryBuilder .termsPanel label,
+.queryBuilder .termsPanel select,
+.queryBuilder .termsPanel input,
+.queryBuilder .termsPanel .auto-suggest {
+  margin-right: 8px;
+}
+/* line 35, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\query-builder.less */
+.queryBuilder .termsPanel .input > input {
+  margin-right: 0px;
+}
+/* line 38, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\query-builder.less */
+.queryBuilder .termsPanel .field-list {
+  width: 170px;
+}
+/* line 43, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\query-builder.less */
+.queryBuilder .termsPanel .dropdown-list > .input > input.preview {
+  color: rgba(6, 18, 25, 0.33);
+}
+/* line 48, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\query-builder.less */
+.queryBuilder .termsPanel .dropdown-list > .popup > .item.special {
+  font-style: italic;
+  font-weight: bold;
+}
+/* line 59, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\query-builder.less */
+.queryBuilder .andTermsPanel > .queryTerm {
+  margin-bottom: 10px;
+}
+/* line 61, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\query-builder.less */
+.queryBuilder .andTermsPanel > .queryTerm:last-child {
+  margin-bottom: 0;
+}
+/* line 67, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\query-builder.less */
+.queryBuilder .panel {
+  margin-bottom: 0;
+}
+/* line 71, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\query-builder.less */
+.queryBuilder .panel.panel-default,
+.queryBuilder .panel.panel-default > .panel-heading {
+  border-color: transparent;
+}
+/* line 78, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\query-builder.less */
+.queryBuilder .form-group {
+  margin-right: 10px;
+}
+/* line 81, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\query-builder.less */
+.queryBuilder .form-group:last-child {
+  margin-right: 0;
+}
+.form-inline .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+/* line 91, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\query-builder.less */
+#btnAdvancedSearch,
+#btnSimpleSearch,
+#btnAddAndTerm,
+#btnAddOrTerm {
+  padding: 9px 0;
+  color: #FFF;
+}
+/* line 99, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\query-builder.less */
+#btnAdvancedSearch .catdvicon,
+#btnSimpleSearch .catdvicon,
+#btnAddAndTerm .catdvicon,
+#btnAddOrTerm .catdvicon {
+  top: 5px;
+}
+/* line 104, C:\Users\john\Projects\SquareBox\CatDVServer7.0\src\webapp\catdv\src\themes\catdv\query-builder.less */
+#btnSearch {
+  padding-top: 5px;
+  padding-bottom: 6px;
+}
+
+.queryBuilder .catdvicon {
+	font-size: 14px;
+}
+
+/******** Main Page Styles ********/
+
+div.pageContainer
+{
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+#mainPage div.content {
+    position: absolute;
+    top: 48px; /* Height of header panel */
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+}
+
+div.pageContainer.details {
+    padding: 10px;  
+}
+
+h3.pagetitle {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 10px;
+    font-size: 15px;
+}
+
+
+/******** Header ********/
+
+div.pageContainer header {
+    position: absolute;
+    display: table-row;
+    width: 100%;
+    height: 48px;
+    margin: 0px;
+    padding: 6px 0px 4px 4px;
+    border-bottom: 6px solid #555555;
+    top: 0;
+}
+
+div.pageContainer header div.cell
+{
+    display: table-cell;
+    vertical-align: top;
+    padding-right: 8px;
+}
+
+div.pageContainer header div.right
+{
+    width: 100%;
+    text-align: right;
+}
+
+div.pageContainer header div.cell.nowrap
+{
+    white-space: nowrap;
+}
+
+.logo {
+    vertical-align: top;
+    padding: 2px 60px 0px 4px;
+    font-size: 18px;
+    color: #3399CC;
+}
+
+.logo img {
+    margin-top: -8px;
+    display: inline-block;
+    height: 38px;
+}
+
+/* <div class="searchbox"><span class="glyphicon glyphicon-search"></span> <input type="text" id="txtSearch"></div> */
+div.searchbox {
+    border: 1px solid #333333;
+    background-color: #cccccc;
+    padding: 3px 2px;
+    margin-left: 30px;
+}
+
+div.searchbox .glyphicon:before {
+    font-size: 13px;
+    color: #999999;
+}
+
+div.searchbox input[type=text]
+{
+    border: 0;
+    background-color: #cccccc;
+    font-size: 11px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+div.searchbox input[type=text]:focus
+{
+   outline-width: 0;
+}
+
+#mainPage header .loginPanel {
+    width: 100%;
+}
+
+#mainPage header .loginPanel > div {
+    text-align: right;
+}
+
+.view-controls .catdvicon {
+    font-size: 14px;
+}
+.view-controls .dropdown-menu {
+    font-size: 12px;
+}
+
+#loginMenu
+{
+	margin: 6px 4px 0px 10px;
+}
+
+/******** Nav Tree Panel ********/
+
+#mainPage #navigatorPanel
+{
+    padding: 6px 10px;
+}
+#mainPage #treeNavigator
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 200px;
+    height: 100%;
+    padding: 8px;
+    overflow: auto;
+}
+
+
+/******** Clip Media Panel ********/
+
+#clipMediaContainer {
+    position: relative;
+    -webkit-flex: 0 1 auto;
+}
+
+.clipMediaPanel {
+    background-color: #202020;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px; /* Video Controls height */
+    right: 0px;
+}
+
+.clipMediaPanel .poster
+{
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+	margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.clipMediaPanel div.player
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 48px; /* Video Controls height */
+    right: 0px;
+}
+.clipMediaPanel div.player video
+{
+    height: 100%;
+}
+
+
+/******** Clip Details Panel ********/
+#mainPage #clipDetailsPanel
+{
+    padding: 0px 4px 0px 8px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+#clipDetailsContent {
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+#clipDetailsContainer {
+    position: absolute;
+    left: 40%;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    padding: 0px 10px;
+}
+
+
+/******** Clip List/Grid Panel ********/
+
+#mainPage #clipList
+{
+    position: absolute;
+    top: 0px;
+    left: 200px;
+    right: 0px;
+    height: 100%
+}
+
+.clipsPanel, .overlayPanel {
+    position: absolute;
+    width: 100%;   
+    height: 100%;	
+}
+
+.overlayPanel >  .messagePanel {
+	position: absolute;
+	top: 40%;
+	width: 100%;
+	text-align: center;
+	font-size: 24px;
+	color: fade(#fff, 33%);
+}
+
+
+
+.paging-controls {
+	background-color: #3a3a3a;
+	border-top: 1px solid #555555;
+}
+
+/******** Login Page Styles ********/
+
+#loginPage {
+	position: relative;
+	height: 100%;
+}
+.login-panel-container
+{
+    width: 100%;	
+}
+.login-panel
+{
+	width: 500px;
+    margin: auto;
+    padding-top: 10%;
+}
+
+.login-panel .form-group
+{
+	margin-bottom: 10px;
+}
+
+#version-info {
+	position: absolute;
+	bottom: 4px;
+	right: 10px;
+}
+	

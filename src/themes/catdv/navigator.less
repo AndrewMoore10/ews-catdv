@@ -1,0 +1,334 @@
+//
+// CatDV navigator
+// --------------------------------------------------
+
+.popout-panel-style () {
+	
+	#gradient > .horizontal(@nav-panel-bg-color; fade(@nav-panel-bg-color,95%); 0%; 50%;);
+
+	&:after{
+	    content: "";
+	    position: absolute;
+	    top: 0px;
+	    bottom: 0px;
+	    left: 100%;
+	    width: 8px;
+	    z-index: 1050;
+		#gradient > .horizontal(fade(#000, 25%); fade(#000, 0%); 0%; 100%);
+	}
+}
+
+.nav-popup-backdrop {
+	display: none;
+	
+	&.open {
+	   position: absolute;
+	   display: block;
+       top: 0px;
+       left:  @navigator-width;
+	   bottom: 0px;
+	   right: 0px;
+       z-index: 1040; /* behind the popout */
+	}
+}
+
+//
+// Sidebar nav
+// --------------------------------------------------
+.navigator {
+	
+	height:100%;
+	.unselectable();
+	
+    .nav-sidebar {
+            
+        position: absolute;
+        top: @header-height;
+        z-index: @zindex-sidenav;        
+        width: @navigator-width;
+        height: 100%;
+        
+        border-top:2px solid #FFF;
+        background-color: @navigator-bg;
+        
+        &:first-child {
+            border-top:none;
+        }
+ 
+        > li {
+            > a {
+				padding: 12px 15px 12px 15px;
+				color: @navigator-color;    
+				font-size: @font-size-sidenav;
+          
+				&:hover {              
+				    color: @navigator-hover-color;
+				}
+          
+				> .catdvicon {           
+					font-size:24px;
+					top:4px;
+					margin-right:8px;
+              
+					&.catdvicon-chevron {                
+						margin-right:0;
+						color:@link-color;                 
+					}           
+				}       
+			}
+      
+			&.active {        
+				background-color:@nav-panel-bg-color;
+          
+				> a {
+					color:#FFF;
+              
+					> .catdvicon {
+						&.catdvicon-chevron {
+							color:transparent;
+						}
+                    }
+                }
+            }
+        }
+    }
+	
+	
+	a.menu-item {
+		cursor:pointer;
+	}	
+	
+	.popout-panel {
+				
+		display: block;
+		position:absolute;
+		height:100%;
+		margin:0;
+		padding: 0;
+		top:0;
+		bottom:0;
+		left: (@navigator-width - @nav-panel-default-width);
+		z-index:@zindex-menu-panel;
+		width: @nav-panel-default-width;	
+		visibility: hidden;
+		
+		.addButton {
+			position: relative;
+			top: 30px;
+			float: right;
+			cursor: pointer;	
+			font-weight: 500;	  
+			color: @nav-panel-link-color;
+            &:hover {
+                color: @nav-panel-link-hover-color;
+            }
+		}
+		
+		&.open {
+			
+			left: @navigator-width;
+			visibility: visible;
+					
+			&.wide {			
+				width: @nav-panel-wide-width;			
+			}
+			
+		}
+				
+		.popout-panel-style();
+		
+		.close-button {
+			position: absolute;
+		    top: 20px;
+		    right: 20px;
+			color: @text-color;
+						
+			&:hover {
+				color: @nav-panel-color;
+			}
+		}
+		
+		.popout-container {
+			position:relative;
+			width:100%;
+			height:100%;
+			padding: (@header-height - @font-size-h2 - 40px) 20px 20px;
+			overflow-x:hidden;
+			overflow-y:auto;
+		}
+		
+		h2 {			
+			color: @nav-panel-color;
+			margin: 13px 0 14px;
+			font-size: @font-size-h1;
+			
+		}
+		
+		#cboSearch {
+		  height: 40px;
+		  > div {
+		      width: 100%;
+		  }
+		}
+		
+		div.treeView {
+			ul {
+				> li  {		
+				    white-space: nowrap;
+				    
+				    span.discloser {
+	                    color: @nav-panel-color;
+	                    margin-left: -12px;
+	 			    }
+				     
+				    span.nodeLabel {			     
+		                color: @nav-panel-color;	
+		                
+		                &:hover {
+                            color: @nav-panel-link-hover-color !important;
+							> .catdvicon-expand {
+							    color: @nav-panel-link-hover-color;
+							}                 
+		                }	     
+	                }
+		            a.editControl {
+			            color: @nav-panel-link-color;
+			            &:hover {
+			                color: @nav-panel-link-hover-color;
+			            }
+		            }
+	                
+	                &.root {
+	                    border-top: 1px solid fade(@nav-panel-color, 80%);
+                        padding: 10px 0;
+	 	                
+		                > span.discloser {
+		                    color: @nav-panel-heading;
+		                }
+		                 
+		                > span.nodeLabel {                 
+		                    color: @nav-panel-heading;             
+		                    text-transform: uppercase;
+		                    height: @catdv-icon-default-size;
+		                    line-height: @catdv-icon-default-size;
+		                    
+		                    > .catdvicon-expand {
+		                        color: #FFF;
+		                        .rotate(180deg);
+		                    }                 
+		                }                    
+	                }                
+				}
+				
+		        &.indented {
+		            margin: 5px 0 10px 10px;
+		        }
+            }
+        }
+  
+        div.treeView.with-root-disclosures {
+            ul > li.root {
+                padding: 10px 0px 10px 12px;
+            }
+        }
+	}	
+	
+    #simpleSearch {
+            margin: 20px 0px 20px 0px;
+    }
+    
+    table.searchForm {
+        border-collapse: collapse;
+        width: 100%;        
+    
+        td,
+        th {
+            padding: 3px 0;
+            text-align: left;
+        }
+    
+        tr {
+            vertical-align: top;
+        }
+    
+        th {
+            font-weight: 600;
+            white-space: nowrap;
+            width: 1%;
+            padding-right: 15px;
+            .unselectable();
+            
+        }
+        
+        tr.readonly th, tr.readonly td {
+           color: @gray;
+        }
+    
+        input[type=text], 
+        input[type=date], 
+        input[type=time], 
+        input[type=datetime] {
+            width: 100%;
+            padding-left: 4px;
+            border: 1px solid transparent;
+        }
+    
+        input[type=radio],
+        input[type=checkbox] {
+            margin-right: 4px;
+        }
+    
+        input[type=radio]:not(:first-child),
+        input[type=checkbox]:not(:first-child) {
+            margin-left: 10px;
+        }
+                
+        textarea {
+            width: 100%;
+            padding-left: 0px;
+        }
+    
+        select {
+            width: 100%;
+            padding-left: 0px;
+        }
+        
+        option {
+            background-color: @input-bg;
+        }
+        
+        .dropDownWrapper {
+            position: relative;
+        }
+        
+        .dropdown-list {
+            > .input  {
+                width: 100%;
+           }
+        }   
+    }
+    
+    #filterTree {
+        margin-top: 10px;
+    }
+		
+	#mediaPathTree {
+		
+		ul {
+			> li {
+				margin-top: 5px;
+				span.nodeLabel.root {
+					display: inline;
+					text-transform: none;
+					color: #FFF;
+					height: auto;
+					line-height: auto;
+				}
+				&:first-child {
+					margin-top: 0;
+				}
+			}			
+		}
+	}
+	
+}

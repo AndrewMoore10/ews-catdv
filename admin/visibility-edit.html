@@ -1,0 +1,75 @@
+
+<div id="editVisibilityDialog" class="modal fade bs-modal-lg">
+	<div class="modal-dialog  modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Edit Visibility</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-8">
+						<form role="form">
+							<div class="form-group">
+								<label for="listVisibilityRules">Visibility</label>
+								<div class="form-control panelVisibilityList">
+									<ul id="listVisibilityRules"></ul>
+								</div>
+								<label id="lblNotDisplayed" for="chkNotDisplayed">
+								<input type="checkbox" id="chkNotDisplayed">
+								Do not display in client.
+								</label>
+							</div>
+						</form>
+					</div>
+					<div class="col-md-4" style="margin-top: 30px;">
+                        <div id="btnAddClientContainer" class="form-group">
+                            <div id="btnAddClient" class="btn-group">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                    Add Client <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <catdv:get path="info/clienttypes">
+                                       <li><a id="addClient_${clienttype.ID}" href="#">${clienttype.name}</a></li>
+                                    </catdv:get>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="btnAddGroupContainer" class="form-group">
+                            <div id="btnAddGroup" class="btn-group">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                    Add Group <span class="caret"></span>
+                                </button>
+                                <ul id="menuAddRole" class="dropdown-menu" role="menu">
+                                    <catdv:get path="groups">
+                                       <li><a id="addGroup_${group.ID}" href="#">${group.name}</a></li>
+                                    </catdv:get>
+                                </ul>
+                            </div>
+                        </div>
+						<div  id="btnAddRoleContainer" class="form-group">
+							<div id="btnAddRole" class="btn-group">
+								<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+									Add Role <span class="caret"></span>
+								</button>
+								<ul id="menuAddRole" class="dropdown-menu" role="menu">
+								    <catdv:get path="roles">
+									   <li><a id="addRole_${role.ID}" href="#">${role.name}</a></li>
+									</catdv:get>
+								</ul>
+							</div>
+						</div>
+						<div class="form-group">
+							<button id="btnDeleteVisibilityItem" type="button" class="btn btn-primary">Remove</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button class="btn btn-primary" data-dismiss="modal">Cancel</button>
+				<button id="btnEditVisibilityOK" class="btn btn-primary">OK</button>
+			</div>
+		</div>
+	</div>
+</div>
