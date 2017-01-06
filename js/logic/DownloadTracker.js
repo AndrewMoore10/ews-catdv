@@ -23,7 +23,7 @@ var downloadTracker = function(){
         var downloadCount = (result.userFields && result.userFields[downloadsField] ? parseInt(result.userFields[downloadsField]) : 0);
         var downloadBy = (result.userFields && result.userFields[downloadedByField] ? result.userFields[downloadedByField] : "");
         result.userFields[downloadsField] = downloadCount + 1;
-        rresult.userFields[downloadedByField] = downloadBy + "<p>" + $.cookie("username") + " @ " + moment().format('MMMM Do YYYY, h:mm:ss a Z z') + "</p>\n";
+        result.userFields[downloadedByField] = downloadBy + "<p>" + $.cookie("username") + " @ " + moment().format('MMMM Do YYYY, h:mm:ss a Z z') + "</p>\n";
         $catdv.saveClip(result, cb, fcb);
         // cb();
       }, fcb);
