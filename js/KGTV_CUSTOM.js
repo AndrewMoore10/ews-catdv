@@ -1,5 +1,6 @@
-$(function(){
+$("#user-changePassword").on("DOMNodeInserted", function(){
+  var element = $(this);
   console.log("ready; hiding password button");
-  $("#user-changePassword").hide();
-  console.log($("#user-changePassword"));
+  element.hide();
+  console.log(element);
 });
