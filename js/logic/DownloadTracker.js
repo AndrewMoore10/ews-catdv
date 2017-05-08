@@ -53,6 +53,23 @@ $(document).on('click contextmenu', '.mediaPath a', function(event){
   return false;
 })
 
+$(document).on('click', '#btnDownload', function(event){
+
+  tracker.updateDownloadCount(getUrlParameter("id"),
+    function(){
+      console.log("download button clicked update count incremented");
+      return true;
+    },
+    function(){
+      console.log("download button ajax failed. ");
+      return false;
+    }
+  )
+  return false;
+});
+
+
+
 
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
